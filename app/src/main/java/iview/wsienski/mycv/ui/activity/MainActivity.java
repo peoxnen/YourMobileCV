@@ -27,6 +27,8 @@ import iview.wsienski.mycv.ui.fragment.TopFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.fab)
@@ -35,7 +37,9 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
     @Bind(R.id.nav_view)
     NavigationView navigationView;
+
     ActionBarDrawerToggle toggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +66,24 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerview = navigationView.getHeaderView(0);
+        headerview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFirstItemMenu();
+            }
+        });
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        if(savedInstanceState==null){
+            openFirstItemMenu();
+        }
     }
+
+    private void openFirstItemMenu(){
+        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+        navigationView.getMenu().getItem(0).setChecked(true);
+    }
+
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
@@ -121,12 +139,12 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         int id = item.getItemId();
 
-        if (id == R.id.nav_education) {
+        if (id == R.id.nav_general) {
+            fragment = new TopFragment();
+        }else if (id == R.id.nav_education) {
             fragment = new EducationFragment();
-            toolbar.setTitle(getString(R.string.nav_title_education));
         } else if(id == R.id.nav_projects){
             fragment = new ProjectsFragment();
-            toolbar.setTitle(getString(R.string.nav_title_projects));
         } else{
             fragment = new TopFragment();
         }
