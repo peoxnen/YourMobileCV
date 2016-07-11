@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="general_array_titles">
+        <item>{\"title\":\"Date of birth:\",\"value\":\"23 August 1990\"}</item>
+        <item>{\"title\":\"Place of birth:\",\"value\":\"Warsaw\"}</item>
+        <item>{\"title\":\"Address:\",\"value\":\"John Wannka Street 1/2/3\"}</item>
+        <item>{\"title\":\"Phone:\",\"value\":\"600800900\"}</item>
+        <item>{\"title\":\"Email:\",\"value\":\"test.jan@gmail.com\"}</item>
+    </string-array>
+</resources>

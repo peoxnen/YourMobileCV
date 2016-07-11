@@ -44,11 +44,6 @@ public class TopFragment extends Fragment {
             Log.d("witek", "item "+item);
             basicInfoList.add(gson.fromJson(item, BasicInfo.class));
         }
-//        basicInfoList.add(new BasicInfo("Date of birth: ", "test1"));
-//        basicInfoList.add(new BasicInfo("Place of birth:", "test2"));
-//        basicInfoList.add(new BasicInfo("Address:", "test2"));
-//        basicInfoList.add(new BasicInfo("Phone: ", "test2"));
-//        basicInfoList.add(new BasicInfo("Email: ", "test2"));
         //GeneralCard
         card = new GeneralCard(getActivity(),basicInfoList);
         card.init();
