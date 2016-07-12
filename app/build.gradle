@@ -11,12 +11,17 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 }
 
@@ -36,4 +41,7 @@ dependencies {
     //Slider
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.slider:library:1.1.5@aar'
+    // Google Play Services
+    compile 'com.google.android.gms:play-services:9.0.2'
+    compile 'com.android.support:multidex:1.0.1'
 }

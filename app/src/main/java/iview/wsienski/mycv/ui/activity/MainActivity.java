@@ -17,6 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.maps.MapFragment;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import iview.wsienski.mycv.R;
@@ -111,6 +113,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new EducationFragment();
         } else if(id == R.id.nav_projects){
             fragment = new ProjectsFragment();
+        } else if(id == R.id.nav_map){
+            fragment = new MapFragment();
         } else if(id == R.id.nav_call){
             call();
             return true;
