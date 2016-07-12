@@ -8,6 +8,7 @@
     style="@style/card.native.header_compound_view">
 
     <TextView
+        android:id="@+id/title"
         android:gravity="center"
         android:textSize="@dimen/text_very_large"
         android:textStyle="bold"

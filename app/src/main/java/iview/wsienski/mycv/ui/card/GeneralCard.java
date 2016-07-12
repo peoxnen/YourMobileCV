@@ -28,7 +28,8 @@ public class GeneralCard extends CardWithList{
 
     @Override
     protected CardHeader initCardHeader() {
-        MyCardHeader cardHeader = new MyCardHeader(getContext());
+        Context context = getContext();
+        MyCardHeader cardHeader = new MyCardHeader(context, context.getString(R.string.main_header_name));
         return cardHeader;
     }
 
