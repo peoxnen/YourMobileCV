@@ -1,13 +1,27 @@
 [{
   "title": "Project 1",
   "desc": "short desc",
-  "desc_long": "long desc",
+  "array": [{
+    "title": "Date of birth:",
+    "value": "23 August 1990"
+  },
+    {
+      "title": "Place of birth:",
+      "value": "Warsaw"
+    }],
   "link": "wp.pl",
   "ico": "1"
 },
   {
     "title": "Project 2",
     "desc": "short desc 2",
-    "desc_long": "long desc 2",
+    "array": [{
+      "title": "Date of birth:",
+      "value": "23 August 1990"
+    },
+      {
+        "title": "Place of birth:",
+        "value": "Warsaw"
+      }],
     "ico": "2"
   }]

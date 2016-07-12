@@ -1,6 +1,7 @@
 package iview.wsienski.mycv.data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Witold Sienski on 12.07.2016.
@@ -8,21 +9,15 @@ import java.io.Serializable;
 public class ProjectInfo implements Serializable {
 
     private String title;
-    private String desc_long;
     private String desc;
     private String link;
+    private ArrayList<BasicInfo> array;
     private int ico;
 
     public ProjectInfo() {
     }
 
-    public String getDesc_long() {
-        return desc_long;
-    }
 
-    public void setDesc_long(String desc_long) {
-        this.desc_long = desc_long;
-    }
 
     public String getTitle() {
         return title;
@@ -56,10 +51,17 @@ public class ProjectInfo implements Serializable {
         this.link = link;
     }
 
+    public ArrayList<BasicInfo> getArray() {
+        return array;
+    }
+
+    public void setArray(ArrayList<BasicInfo> array) {
+        this.array = array;
+    }
 
     @Override
     public String toString()
     {
-        return "ClassPojo [title = "+title+", desc_long = "+desc_long+", desc = "+desc+", link = "+link+", ico = "+ico+"]";
+        return "ClassPojo [title = "+title+", array.size = "+array.size()+", desc = "+desc+", link = "+link+", ico = "+ico+"]";
     }
 }

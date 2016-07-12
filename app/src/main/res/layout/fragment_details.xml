@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.MainActivity">
 
-   <TextView
-       android:text="details"
+   <it.gmariotti.cardslib.library.view.CardViewNative
+       android:id="@+id/card_desc"
        android:layout_width="match_parent"
-       android:layout_height="100dp"
-       android:layout_weight="0"/>
+       android:layout_height="wrap_content"
+       android:layout_weight="0"
+       android:layout_marginLeft="@dimen/def_margin"
+       android:layout_marginRight="@dimen/def_margin"
+       android:layout_marginTop="@dimen/def_margin"/>
 
    <com.daimajia.slider.library.SliderLayout
        android:id="@+id/slider"
        android:visibility="gone"
+       android:layout_margin="@dimen/def_margin"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        />

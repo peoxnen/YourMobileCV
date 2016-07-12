@@ -43,7 +43,7 @@ public class GeneralFragment extends Fragment implements GeneralView {
     @Override
     public void showBasicInfoCard(List<BasicInfo> basicInfoList) {
         //GeneralCard
-        card = new GeneralCard(getActivity(),basicInfoList);
+        card = new GeneralCard(getActivity(),basicInfoList, getString(R.string.main_header_name));
         card.init();
 
         //Set card in the cardView

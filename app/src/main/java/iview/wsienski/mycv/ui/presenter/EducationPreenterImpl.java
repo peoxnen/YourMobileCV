@@ -14,7 +14,6 @@ import it.gmariotti.cardslib.library.internal.Card;
 import iview.wsienski.mycv.Configuration;
 import iview.wsienski.mycv.data.ArrayBasicInfo;
 import iview.wsienski.mycv.ui.card.GeneralCard;
-import iview.wsienski.mycv.ui.card.MyCardHeader;
 import iview.wsienski.mycv.ui.view.EducationView;
 import iview.wsienski.mycv.util.Utils;
 
@@ -39,10 +38,8 @@ public class EducationPreenterImpl implements EducationPresenter {
 
         ArrayList<Card> cards = new ArrayList<>();
         for(ArrayBasicInfo arrayBasicInfo : arrayBasicInfos){
-            MyCardHeader header = new MyCardHeader(context,arrayBasicInfo.getTitle());
-            GeneralCard card = new GeneralCard(context, arrayBasicInfo.getArray());
+            GeneralCard card = new GeneralCard(context, arrayBasicInfo.getArray(), arrayBasicInfo.getTitle());
             card.init();
-            card.addCardHeader(header);
             cards.add(card);
         }
 

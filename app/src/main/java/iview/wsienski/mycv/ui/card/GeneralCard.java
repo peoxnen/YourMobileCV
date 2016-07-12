@@ -19,17 +19,19 @@ import iview.wsienski.mycv.data.BasicInfo;
  */
 public class GeneralCard extends CardWithList{
 
+    String title;
     List<BasicInfo> basicInfoList;
 
-    public GeneralCard(Context context, List<BasicInfo> basicInfoList) {
+    public GeneralCard(Context context, List<BasicInfo> basicInfoList, String title) {
         super(context);
+        this.title=title;
         this.basicInfoList=basicInfoList;
     }
 
     @Override
     protected CardHeader initCardHeader() {
         Context context = getContext();
-        MyCardHeader cardHeader = new MyCardHeader(context, context.getString(R.string.main_header_name));
+        MyCardHeader cardHeader = new MyCardHeader(context, title);
         return cardHeader;
     }
 

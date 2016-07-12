@@ -14,8 +14,12 @@ import android.widget.Toast;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import it.gmariotti.cardslib.library.view.CardViewNative;
 import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.data.ProjectInfo;
+import iview.wsienski.mycv.ui.card.GeneralCard;
 
 /**
  * Created by Witold Sienski on 12.07.2016.
@@ -25,20 +29,22 @@ public class ProjectDeatilsFragment extends Fragment {
     private static final String TAG = ProjectDeatilsFragment.class.getSimpleName();
     public static final String PROJECT_BUNDLE_ID = "PROJECT_BUNDLE_ID";
     View view;
+    @Bind(R.id.slider)
     SliderLayout sliderLayout;
+    @Bind(R.id.card_desc)
+    CardViewNative cardView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG,"onCreateView");
         view = inflater.inflate(R.layout.fragment_details, container, false);
-        sliderLayout= (SliderLayout) view.findViewById(R.id.slider);
+        ButterKnife.bind(this, view);
 
         Bundle bundle = getArguments();
         if(bundle!=null){
             ProjectInfo projectInfo = (ProjectInfo) bundle.getSerializable(PROJECT_BUNDLE_ID);
-            Log.d("witek","projectInfo");
-            Log.d("witek","projectInfo "+projectInfo);
+            setDescCard(projectInfo);
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(projectInfo.getTitle());
             if(!TextUtils.isEmpty(projectInfo.getLink())){
                 setSlider();
@@ -48,6 +54,12 @@ public class ProjectDeatilsFragment extends Fragment {
         }
 
         return view;
+    }
+
+    void setDescCard(ProjectInfo projectInfo){
+        GeneralCard card = new GeneralCard(getActivity(), projectInfo.getArray(), projectInfo.getTitle());
+        card.init();
+        cardView.setCard(card);
     }
 
     void setSlider(){
