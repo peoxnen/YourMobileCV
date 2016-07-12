@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.ui.fragment.EducationFragment;
 import iview.wsienski.mycv.ui.fragment.ProjectsFragment;
-import iview.wsienski.mycv.ui.fragment.TopFragment;
+import iview.wsienski.mycv.ui.fragment.GeneralFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -130,13 +130,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_general) {
-            fragment = new TopFragment();
+            fragment = new GeneralFragment();
         }else if (id == R.id.nav_education) {
             fragment = new EducationFragment();
         } else if(id == R.id.nav_projects){
             fragment = new ProjectsFragment();
         } else{
-            fragment = new TopFragment();
+            fragment = new GeneralFragment();
         }
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
