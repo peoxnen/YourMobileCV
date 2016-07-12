@@ -7,8 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.MainActivity">
 
-    <it.gmariotti.cardslib.library.view.CardView
+    <it.gmariotti.cardslib.library.view.CardViewNative
         android:id="@+id/card_general"
+        card:card_layout_resourceID="@layout/native_cardwithlist_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"

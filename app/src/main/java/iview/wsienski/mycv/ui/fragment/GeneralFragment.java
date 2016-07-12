@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import it.gmariotti.cardslib.library.view.CardView;
+import it.gmariotti.cardslib.library.view.CardViewNative;
 import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.data.BasicInfo;
 import iview.wsienski.mycv.ui.card.GeneralCard;
@@ -46,7 +46,7 @@ public class GeneralFragment extends Fragment implements GeneralView {
         card.init();
 
         //Set card in the cardView
-        CardView cardView = (CardView) view.findViewById(R.id.card_general);
+        CardViewNative cardView = (CardViewNative) view.findViewById(R.id.card_general);
         cardView.setCard(card);
     }
 }
