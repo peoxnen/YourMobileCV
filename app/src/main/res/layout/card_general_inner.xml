@@ -6,8 +6,8 @@
     android:layout_marginRight="12dp"
     android:layout_gravity="center_vertical"
     android:layout_height="wrap_content"
-    android:background="@drawable/card_kitkat_selector"
-    android:minHeight="40dp">
+    android:background="@drawable/card_selector"
+    android:minHeight="50dp">
 
             <TextView
                 android:paddingLeft="10dp"
@@ -15,8 +15,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
-                tools:text="Gabriele Mariotti"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_large"
                 android:textStyle="bold"
                 android:layout_height="wrap_content"/>
 
@@ -24,8 +23,7 @@
                 android:id="@+id/item_value"
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
-                tools:text="127 people in common"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_large"
                 android:layout_height="wrap_content"/>
 
 
