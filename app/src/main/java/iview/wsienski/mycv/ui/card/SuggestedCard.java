@@ -1,5 +1,7 @@
 package iview.wsienski.mycv.ui.card;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +19,7 @@ import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.data.ProjectInfo;
 import iview.wsienski.mycv.ui.activity.MainActivity;
 import iview.wsienski.mycv.ui.fragment.ProjectDeatilsFragment;
+import iview.wsienski.mycv.util.Utils;
 
 /**
  * Created by Witold Sienski on 11.07.2016.
@@ -36,7 +39,7 @@ public class SuggestedCard extends Card {
         //Add a header
         MyCardHeader header = new MyCardHeader(getContext(), projectInfo.getTitle());
         addCardHeader(header);
-        header.setOtherButtonDrawable(R.drawable.ic_menu_send);
+        header.setOtherButtonDrawable(R.drawable.ic_action_globe);
         if(!TextUtils.isEmpty(projectInfo.getLink()))
             setOtherBtn(header);
 
@@ -62,7 +65,7 @@ public class SuggestedCard extends Card {
         if(projectInfo.getIco()==1){
             return R.drawable.ico_miboa;
         }else{
-            return R.drawable.ic_menu_send;
+            return R.mipmap.ic_launcher;
         }
     }
 
@@ -74,6 +77,7 @@ public class SuggestedCard extends Card {
             @Override
             public void onButtonItemClick(Card card, View view) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(projectInfo.getLink()));
+                if(Utils.checkPerm((Activity)getContext(), Manifest.permission.INTERNET))
                 getContext().startActivity(browserIntent);
             }
         });
