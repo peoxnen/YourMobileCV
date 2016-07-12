@@ -1,0 +1,20 @@
+[{
+  "title": "Date of birth:",
+  "value": "23 August 1990"
+},
+  {
+    "title": "Place of birth:",
+    "value": "Warsaw"
+  },
+  {
+    "title": "Address:",
+    "value": "John Wannka Street 1/2/3"
+  },
+  {
+    "title": "Phone:",
+    "value": "600800900"
+  },
+  {
+    "title": "Email:",
+    "value": "test.jan@gmail.com"
+  }]

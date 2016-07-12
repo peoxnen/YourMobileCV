@@ -1,0 +1,34 @@
+[{
+	"title": "2013-2015 Warsaw University of Technology",
+	"array": [{
+		"title": "Academic Title:",
+		"value": "Master of Science (MS)"
+	},
+	{
+		"title": "Branch of study:",
+		"value": "Telecommunications Engineering"
+	},
+	{
+		"title": "Project:",
+		"value": "Fitness application for smartwatches (Tizen) synchronized to app on smarthone (Android)"
+	}]
+},
+{
+	"title": "2009-2013 Warsaw University of Technology",
+	"array": [{
+		"title": "Academic Title:",
+		"value": "Bachelor of Science (BS)"
+	},
+	{
+		"title": "Branch of study:",
+		"value": "Electronics, Telecommunications and Computer Science"
+	},
+	{
+		"title": "Speciality:",
+		"value": "Engineering in Teleinformatics and Telecommunications Management"
+	},
+	{
+		"title": "Project:",
+		"value": "Smart calendar and meeting app for Android"
+	}]
+}]
