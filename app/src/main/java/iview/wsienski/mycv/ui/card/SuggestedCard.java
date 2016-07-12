@@ -3,6 +3,7 @@ package iview.wsienski.mycv.ui.card;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.data.ProjectInfo;
+import iview.wsienski.mycv.ui.activity.MainActivity;
+import iview.wsienski.mycv.ui.fragment.ProjectDeatilsFragment;
 
 /**
  * Created by Witold Sienski on 11.07.2016.
@@ -42,6 +45,14 @@ public class SuggestedCard extends Card {
             @Override
             public void onClick(Card card, View view) {
                 Toast.makeText(getContext(), "Click listener", Toast.LENGTH_LONG).show();
+                if(getContext() instanceof MainActivity){
+                    MainActivity mainActivity = (MainActivity)getContext();
+                    Bundle bundle = new Bundle();
+                    ProjectDeatilsFragment projectDeatilsFragment = new ProjectDeatilsFragment();
+                    bundle.putSerializable(ProjectDeatilsFragment.PROJECT_BUNDLE_ID, projectInfo);
+                    projectDeatilsFragment.setArguments(bundle);
+                    mainActivity.switchFragment(projectDeatilsFragment);
+                }
             }
         });
 
@@ -79,8 +90,10 @@ public class SuggestedCard extends Card {
             if (title != null)
                 title.setText(projectInfo.getDesc());
 
-            if (member != null)
+            if (member != null && !TextUtils.isEmpty(projectInfo.getLink())) {
+                member.setVisibility(View.VISIBLE);
                 member.setText(R.string.info_press_details);
+            }
 
             if(imageView!=null)
                 imageView.setImageDrawable(getContext().getResources().getDrawable(getIconId()));

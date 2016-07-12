@@ -1,9 +1,11 @@
 package iview.wsienski.mycv.data;
 
+import java.io.Serializable;
+
 /**
  * Created by Witold Sienski on 12.07.2016.
  */
-public class ProjectInfo {
+public class ProjectInfo implements Serializable {
 
     private String title;
     private String desc_long;

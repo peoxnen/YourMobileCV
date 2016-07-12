@@ -31,4 +31,9 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
     //Gson
     compile 'com.google.code.gson:gson:2.6.2'
+    //Picasso
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    //Slider
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.slider:library:1.1.5@aar'
 }

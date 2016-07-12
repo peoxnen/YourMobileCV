@@ -14,4 +14,7 @@
     <string name="main_header_name">Jan Stanisław Kowalski</string>
     <string name="main_header_mail">kowalski@gmail.com</string>
     <string name="info_press_details">Press to check details...</string>
+    <string name="error">Error</string>
+    <string name="image_desc_1">Image 1</string>
+    <string name="image_desc_2">Image 2</string>
 </resources>
