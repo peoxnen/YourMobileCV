@@ -94,8 +94,7 @@ public class SuggestedCard extends Card {
             if (title != null)
                 title.setText(projectInfo.getDesc());
 
-            if (member != null && !TextUtils.isEmpty(projectInfo.getLink())) {
-                member.setVisibility(View.VISIBLE);
+            if (member != null) {
                 member.setText(R.string.info_press_details);
             }
 

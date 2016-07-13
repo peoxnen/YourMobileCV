@@ -63,8 +63,11 @@ public class ProjectDeatilsFragment extends Fragment {
     }
 
     void setSlider(){
-        sliderLayout.addSlider(getTxtSliderView(R.string.image_desc_1, R.drawable.img1_1));
-        sliderLayout.addSlider(getTxtSliderView(R.string.image_desc_2, R.drawable.img1_2));
+        sliderLayout.addSlider(getTxtSliderView(R.string.desc_img1, R.drawable.img1));
+        sliderLayout.addSlider(getTxtSliderView(R.string.desc_img2, R.drawable.img2));
+        sliderLayout.addSlider(getTxtSliderView(R.string.desc_img3, R.drawable.img3));
+        sliderLayout.addSlider(getTxtSliderView(R.string.desc_img4, R.drawable.img4));
+        sliderLayout.addSlider(getTxtSliderView(R.string.desc_img5, R.drawable.img5));
         sliderLayout.setVisibility(View.VISIBLE);
     }
 
