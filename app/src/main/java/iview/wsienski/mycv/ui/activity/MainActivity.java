@@ -17,13 +17,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.gms.maps.MapFragment;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import iview.wsienski.mycv.R;
 import iview.wsienski.mycv.ui.fragment.EducationFragment;
 import iview.wsienski.mycv.ui.fragment.GeneralFragment;
+import iview.wsienski.mycv.ui.fragment.MyMapFragment;
 import iview.wsienski.mycv.ui.fragment.ProjectsFragment;
 import iview.wsienski.mycv.util.Utils;
 
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         Fragment fragment = null;
         int id = item.getItemId();
-
+        fab.setVisibility(View.VISIBLE);
         if (id == R.id.nav_general) {
             fragment = new GeneralFragment();
         }else if (id == R.id.nav_education) {
@@ -114,7 +113,8 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.nav_projects){
             fragment = new ProjectsFragment();
         } else if(id == R.id.nav_map){
-            fragment = new MapFragment();
+            fab.setVisibility(View.GONE);
+            fragment = new MyMapFragment();
         } else if(id == R.id.nav_call){
             call();
             return true;
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new GeneralFragment();
         }
 
-        switchFragment(fragment);
+        switchFragment(fragment, false);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -136,10 +136,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
     }
 
-    public void switchFragment(Fragment fragment){
+    public void switchFragment(Fragment fragment, boolean addToBackStack){
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null);
+        if(addToBackStack)
+            fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }

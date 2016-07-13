@@ -14,19 +14,14 @@
             android:id="@+id/nav_projects"
             android:icon="@drawable/ic_apps"
             android:title="@string/nav_title_projects" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="@string/nav_title_map" />
+        <item
+            android:id="@+id/nav_call"
+            android:icon="@drawable/ic_phone"
+            android:title="@string/nav_title_call" />
     </group>
-
-    <item android:title="@string/nav_title_contact">
-        <menu>
-            <item
-                android:id="@+id/nav_map"
-                android:icon="@drawable/ic_map"
-                android:title="@string/nav_title_map" />
-            <item
-                android:id="@+id/nav_call"
-                android:icon="@drawable/ic_phone"
-                android:title="@string/nav_title_call" />
-        </menu>
-    </item>
 
 </menu>

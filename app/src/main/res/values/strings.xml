@@ -18,4 +18,5 @@
     <string name="image_desc_1">Image 1</string>
     <string name="image_desc_2">Image 2</string>
     <string name="my_phone">600700900</string>
+    <string name="wait">Wait...</string>
 </resources>

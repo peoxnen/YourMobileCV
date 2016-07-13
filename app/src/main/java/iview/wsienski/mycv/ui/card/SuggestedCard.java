@@ -54,7 +54,7 @@ public class SuggestedCard extends Card {
                     ProjectDeatilsFragment projectDeatilsFragment = new ProjectDeatilsFragment();
                     bundle.putSerializable(ProjectDeatilsFragment.PROJECT_BUNDLE_ID, projectInfo);
                     projectDeatilsFragment.setArguments(bundle);
-                    mainActivity.switchFragment(projectDeatilsFragment);
+                    mainActivity.switchFragment(projectDeatilsFragment, true);
                 }
             }
         });
