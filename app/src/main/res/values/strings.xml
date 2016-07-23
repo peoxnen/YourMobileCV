@@ -19,4 +19,9 @@
     <string name="image_desc_2">Image 2</string>
     <string name="my_phone">600700900</string>
     <string name="wait">Wait...</string>
+    <string name="desc_img1">desc_img1</string>
+    <string name="desc_img2">desc_img2</string>
+    <string name="desc_img3">desc_img3</string>
+    <string name="desc_img4">desc_img4</string>
+    <string name="desc_img5">desc_img5</string>
 </resources>
